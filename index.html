@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="color-squares"></div>
+    <div id="start-screen">
+        <h1>Color Match</h1>
+        <div id="high-score" style="display: none;">
+            Highest Score: <span id="high-score-value"></span>
+            <br>
+            Difficulty: <span id="high-score-difficulty"></span>
+        </div>
+        <button id="start-game">Start Game</button>
+    </div>
+    <div id="difficulty-screen" style="display: none;">
+        <h2>Choose Difficulty</h2>
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
+        <button id="very-hard">Very Hard</button>
+    </div>
+    <div id="game-container">
+        <h2 id="score"><strong>Score: <span id="score-value">0</span></strong></h2>
+        <h2 id="timer">1:00</h2>
+        <div id="target-color"></div>
+        <div id="sliders">
+            <div class="slider-container">
+                <label for="red">Red:</label>
+                <input type="range" id="red" min="0" max="255" value="0">
+                <span id="red-value">0</span>
+            </div>
+            <div class="slider-container">
+                <label for="green">Green:</label>
+                <input type="range" id="green" min="0" max="255" value="0">
+                <span id="green-value">0</span>
+            </div>
+            <div class="slider-container">
+                <label for="blue">Blue:</label>
+                <input type="range" id="blue" min="0" max="255" value="0">
+                <span id="blue-value">0</span>
+            </div>
+        </div>
+        <div id="guess-color"></div>
+        <div id="guess-result"></div>
+        <button id="submit-guess">Submit Guess</button>
+        <div id="hearts"></div>
+        <button id="pause-game">Pause</button>
+    </div>
+    <div id="game-over" style="display: none;">
+        <h2>Game Over</h2>
+        <p>Colors guessed correctly: <span id="final-score"></span></p>
+        <p>Difficulty: <span id="final-difficulty"></span></p>
+        <div id="new-high-score" style="display: none;">
+            <h3>New High Score!</h3>
+            <p>Score: <span id="new-high-score-value"></span></p>
+            <p>Difficulty: <span id="new-high-score-difficulty"></span></p>
+        </div>
+        <button id="restart" class="btn-primary">Restart Game</button>
+        <button id="back-to-start" class="btn-secondary">Back to Start</button>
+    </div>
+    <div id="pause-overlay" class="overlay" style="display: none;"></div>
+    <div id="pause-modal" class="modal" style="display: none;">
+        <h2>Game Paused</h2>
+        <button id="resume-game">Resume</button>
+        <button id="back-to-menu">Back to Start</button>
+    </div>
+    <div id="confirm-modal" class="modal" style="display: none;">
+        <h2>Are you sure?</h2>
+        <p>You will lose your current progress.</p>
+        <button id="confirm-yes">Yes</button>
+        <button id="confirm-cancel">Cancel</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

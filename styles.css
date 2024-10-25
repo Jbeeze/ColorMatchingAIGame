@@ -1,0 +1,316 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+#game-container, #game-over {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#target-color, #guess-color {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border: 1px solid #000;
+    display: block; /* Ensure the element is displayed as a block */
+}
+
+#sliders {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+#sliders input {
+    width: 200px;
+    margin: 5px 0;
+}
+
+#hearts {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+button {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+#start-screen h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#start-screen #high-score {
+    margin-bottom: 20px;
+}
+
+#start-screen button {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#color-squares {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.color-square {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    transition: all 3s ease-in-out;
+}
+
+#round-info {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#guess-result {
+    font-size: 18px;
+    margin-top: 15px;
+    min-height: 44px;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.slider-container label {
+    width: 50px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.slider-container input[type="range"] {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.slider-container span {
+    width: 30px;
+    text-align: left;
+}
+
+#red-value {
+    color: #ff0000;
+}
+
+#green-value {
+    color: #00ff00;
+}
+
+#blue-value {
+    color: #0000ff;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Add these styles at the end of the file */
+#difficulty-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
+}
+
+#difficulty-screen h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#difficulty-screen button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Add these styles at the end of the file */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.modal button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#pause-game {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#pause-game:hover {
+    background-color: rgba(51, 51, 51, 0.1);
+}
+
+#pause-game:active {
+    background-color: rgba(51, 51, 51, 0.2);
+}
+
+/* Add these styles at the end of the file */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #4CAF50;
+}
+
+.toast.error {
+    background-color: #F44336;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+/* Add these styles at the end of the file or update existing button styles */
+
+/* Primary button style */
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* Secondary button style */
+.btn-secondary {
+    background-color: transparent;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Update the game over screen button styles */
+#game-over button {
+    margin: 10px;
+}
