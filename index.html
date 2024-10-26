@@ -27,25 +27,33 @@
     <div id="game-container">
         <h2 id="score"><strong>Score: <span id="score-value">0</span></strong></h2>
         <h2 id="timer">1:00</h2>
-        <div id="target-color"></div>
-        <div id="sliders">
-            <div class="slider-container">
-                <label for="red">Red:</label>
-                <input type="range" id="red" min="0" max="255" value="0">
-                <span id="red-value">0</span>
+        <div class="color-comparison" style="display: flex; justify-content: center; align-items: center; gap: 60px; margin-bottom: 20px;">
+            <div class="color-container" style="text-align: center;">
+                <label for="target-color" class="color-label" style="display: block; margin-bottom: 10px;">Guess this color</label>
+                <div id="target-color" style="width: 100px; height: 100px; display: inline-block;"></div>
             </div>
-            <div class="slider-container">
-                <label for="green">Green:</label>
-                <input type="range" id="green" min="0" max="255" value="0">
-                <span id="green-value">0</span>
-            </div>
-            <div class="slider-container">
-                <label for="blue">Blue:</label>
-                <input type="range" id="blue" min="0" max="255" value="0">
-                <span id="blue-value">0</span>
+            <div class="color-container" style="text-align: center;">
+                <label for="guess-color" class="color-label" style="display: block; margin-bottom: 10px;">Your Guess</label>
+                <div id="guess-color" style="width: 100px; height: 100px; display: inline-block;"></div>
             </div>
         </div>
-        <div id="guess-color"></div>
+        <div id="sliders" style="margin-bottom: 10px;">
+            <div class="slider-container" style="padding: 20px 0;">
+                <label for="red" style="font-size: 1.2em;">Red:</label>
+                <input type="range" id="red" min="0" max="255" value="0" style="width: 100%; height: 40px;">
+                <span id="red-value" style="font-size: 1.2em;">0</span>
+            </div>
+            <div class="slider-container" style="padding: 20px 0;">
+                <label for="green" style="font-size: 1.2em;">Green:</label>
+                <input type="range" id="green" min="0" max="255" value="0" style="width: 100%; height: 40px;">
+                <span id="green-value" style="font-size: 1.2em;">0</span>
+            </div>
+            <div class="slider-container" style="padding: 20px 0 10px 0;">
+                <label for="blue" style="font-size: 1.2em;">Blue:</label>
+                <input type="range" id="blue" min="0" max="255" value="0" style="width: 100%; height: 40px;">
+                <span id="blue-value" style="font-size: 1.2em;">0</span>
+            </div>
+        </div>
         <div id="guess-result"></div>
         <button id="submit-guess">Submit Guess</button>
         <div id="hearts"></div>
